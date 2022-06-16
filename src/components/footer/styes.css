@@ -1,0 +1,13 @@
+.footer{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white; 
+
+}
+
+.footerlinks{
+    width: 40vw;
+    display: flex;
+    justify-content: space-evenly;
+}
