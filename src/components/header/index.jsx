@@ -1,11 +1,14 @@
+import { useContext } from "react";
+import { DefaultContext } from "../../Context";
+
 //импортируем .svg картинки как компоненты Реакт
 import { ReactComponent as StarWarsLogoSVG } from "../../assets/star-wars.svg";
-import { ReactComponent as IconSearchSVG } from "../../assets/icon-search.svg";
 import { ReactComponent as FacebookLogoSVG } from "../../assets/facebook.svg";
 import { ReactComponent as InstagramLogoSVG } from "../../assets/instagram.svg";
 import { ReactComponent as TwitterLogoSVG } from "../../assets/twitter.svg";
 import { ReactComponent as YoutubeLogoSVG } from "../../assets/youtube.svg";
 
+import SearchField from "../search"
 //массив данных ссылок
 const swLinks = [
   {
@@ -30,7 +33,10 @@ const swLinks = [
   },
 ];
 
-export const Header = ({ fan }) => {
+export const Header = () => {
+  const {fan}  = useContext(DefaultContext);
+  const { handleSetTheme } = useContext(DefaultContext);
+  const { theme } = useContext(DefaultContext);
   return (
     <header>
       <div className="links-layout">
@@ -49,11 +55,11 @@ export const Header = ({ fan }) => {
       </div>
       <StarWarsLogoSVG />
       <div className="search-layout">
-        <IconSearchSVG className="search-icon" />
-        <input placeholder="Search Star Wars" type="text" />
+        <SearchField/>
         <div style={{ color: "white", paddingTop: "1rem" }}>
           I am fan of: {fan}
         </div>
+        <button onClick = {() => handleSetTheme(theme === 'dark' ? `light`: 'dark')} >Change Theme</button>
       </div>
     </header>
   );

@@ -1,9 +1,15 @@
 :root {
-  --main-bg-color: #151515;
-  --secondary-bg-color: #343434;
   --main-font-family: DIN, Helvetica, Arial, sans-serif;
+  }
+.dark{ 
+  background-color: #151515;
+  color: white
 }
 
+.light{
+  background-color:  white;
+  color: black; 
+}
 
 header {
   display: grid;
@@ -11,13 +17,13 @@ header {
   justify-items: center;
 }
 
+
 input {
   box-sizing: border-box;
   height: 10px;
   font-family: var(--main-font-family);
   padding: 1rem;
   background-color: var(--secondary-bg-color);
-  color: white;
 }
 
 hr {
@@ -62,14 +68,12 @@ hr {
 .select-item {
   padding: 1rem;
   background-color: var(--secondary-bg-color);
-  color: white;
   cursor: pointer;
 }
 
 .item-list-layout {
   border: solid 1px var(--secondary-bg-color);
   display: grid;
-  color: white;
   grid-template-columns: 1fr 1fr;
   padding: 1rem;
 }

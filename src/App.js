@@ -15,13 +15,20 @@ export default function App() {
     setFan(name);
   };
 
+  const [theme, setTheme] = useState("dark");
+  const handleSetTheme = (theme) => {
+    setTheme(theme);
+  };
+
   return (
-    <DefaultContext.Provider value={{ handleCreateFan }}>
-      <Header fan={fan} />
-      <hr />
-      <Content />
-      <hr/>
-      <Footer/>
+    <DefaultContext.Provider value={{theme, fan, handleCreateFan, handleSetTheme}} >
+        <div className = {`${theme}`}>
+          <Header/>
+          <hr />
+          <Content />
+          <hr/>
+          <Footer/>
+        </div>
     </DefaultContext.Provider>
   );
 }

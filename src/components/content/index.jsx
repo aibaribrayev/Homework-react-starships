@@ -8,7 +8,7 @@ import { ItemSpisok } from "../sw-item-spisok";
 
 import { ItemLists } from "../sw-item-lists";
 
-export const Content = ({ handleCreateFan }) => {
+export const Content = () => {
   const [selector, setSelector] = useState("Characters");
 
   const handleSelectorChange = (event) => {
@@ -16,7 +16,7 @@ export const Content = ({ handleCreateFan }) => {
   };
 
   return (
-    <div className="content-layout">
+    <div className="content-layout" >
       <select
         value={selector}
         placeholder="Choose your path"
